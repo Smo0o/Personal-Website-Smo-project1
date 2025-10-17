@@ -12,10 +12,11 @@ body{
   color: #111827;
 }
 
+
 /* Hero */
 .hero{
   background: linear-gradient(135deg, rgba(85,99,246,0.9) 0%, rgba(0,123,255,0.85) 100%);
-  color: #ffffff;
+  color: #000000;
   padding: 4.5rem 0;
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
@@ -35,16 +36,41 @@ body{
 
 /* Centered circular frame for hero image */
 .hero-image-wrap{
-  display:flex; align-items:center; justify-content:center; margin:0 auto 0.75rem; width:180px; height:180px; border-radius:50%; background:linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)); box-shadow:0 10px 22px rgba(15,23,42,0.08);
+  display:flex; align-items:center; justify-content:center; margin:0 auto 0.75rem; width:180px; height:180px; border-radius:50%; background:linear-gradient(135deg, rgba(0, 0, 0, 0.12), rgba(255,255,255,0.04)); box-shadow:0 10px 22px rgba(15,23,42,0.08);
 }
 .hero-image-wrap .profile-img{ width:150px; height:150px; border-radius:50%; border-width:4px; }
 
 /* Prominent about text under the hero image */
-.hero-about{ font-size:1.125rem; line-height:1.6; max-width:70ch; margin:0 auto; text-align:center; color:rgba(255,255,255,0.95); }
+.hero-about{ font-size:1.125rem; line-height:1.6; max-width:70ch; margin:0 auto; text-align:center; color:rgba(0, 0, 0, 0.95); }
+
+/* Ensure hero headings and text are visible on the light background */
+.hero h1, .hero .hero-about {
+  color: #111827 !important;
+}
+
+@media (min-width: 768px){
+  .hero .hero-about, .hero h1{ text-align: left; margin-left: 0; }
+}
 
 /* Hover-grow animation for headings and paragraphs */
 .hover-grow{ transition: transform 180ms ease, color 180ms ease; }
 .hover-grow:hover{ transform: scale(1.03); }
+
+/* Tilt effect */
+.tilt-card{ perspective: 900px; }
+.tilt-inner{ transition: transform 300ms cubic-bezier(.2,.9,.2,1); transform-style: preserve-3d; will-change: transform; }
+.tilt-inner{ position:relative; }
+.tilt-inner::after{ content: ''; position:absolute; inset:0; pointer-events:none; }
+
+/* Ensure tilt wrappers don't cause overflow and work with cards */
+.tilt-card{ display:block; }
+.tilt-card .card{ transform-origin: center; }
+
+@media (pointer: coarse){
+  /* Disable tilt on touch devices */
+  .tilt-card{ pointer-events: auto; }
+  .tilt-inner{ transition: none; transform: none !important; }
+}
 
 section h2{ 
   border-left: 4px solid var(--accent);
