@@ -27,17 +27,20 @@
       </div>
     </nav>
 
-    <header class="hero text-light py-6">
+  <header class="hero py-6">
       <div class="container">
-        <div class="row align-items-start">
+        <div class="row align-items-center">
           <div class="col-md-6 text-md-start text-center">
-            <h1 class="display-4 fw-bold">Sams Portfolio</h1>
-            <p class="lead opacity-85">My name is Sam, I love to learn new things and im really enjoying this course so far. Im an avid music producer and audio engineer but my career lies in full stack development, I hope that I can land a solid job and learn the skills to pay the bills!</p>
-            <!-- View Projects CTA removed per request -->
+            <h1 class="display-4 fw-bold hover-grow">About</h1>
+            <div class="tilt-card">
+              <div class="tilt-inner">
+                <p class="hero-about mt-3">My name is Sam, I love to learn new things and I'm really enjoying this course so far. I'm an avid music producer and audio engineer, and I'm transitioning into full stack development. I'm building projects and learning the skills to land a solid job.</p>
+              </div>
+            </div>
           </div>
-          <div class="col-md-6 text-center mt-3 mt-md-0">
+          <div class="col-md-6 text-center mb-4 mb-md-0">
             <div class="hero-image-wrap mx-md-auto">
-              <img src="https://via.placeholder.com/320" alt="Your portrait" class="img-fluid rounded-circle profile-img">
+              <img src="Adobe Express - file.png" alt="Sam portrait" class="img-fluid profile-img">
             </div>
           </div>
         </div>
@@ -45,10 +48,6 @@
     </header>
 
     <main class="container my-5">
-      <section id="about" class="mb-5">
-        <h2>About</h2>
-        <p>My name is Sam, I love to learn new things and im really enjoying this course so far. Im an avid music producer and audio engineer but my career lies in full stack development, I hope that I can land a solid job and learn the skills to pay the bills!</p>
-      </section>
 
       <section id="projects" class="mb-5">
         <h2>Projects</h2>
@@ -60,21 +59,33 @@
         <h2>Skills</h2>
         <div class="row gy-3">
           <div class="col-md-4">
-            <div class="card p-3">
-              <h5>Front-end</h5>
-              <p class="mb-0">HTML, CSS, Bootstrap, JavaScript</p>
+            <div class="tilt-card">
+              <div class="tilt-inner">
+                <div class="card p-3">
+                  <h5>Front-end</h5>
+                  <p class="mb-0">HTML, CSS, Bootstrap, JavaScript</p>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card p-3">
-              <h5>Tools</h5>
-              <p class="mb-0">Git, VS Code, Chrome DevTools</p>
+            <div class="tilt-card">
+              <div class="tilt-inner">
+                <div class="card p-3">
+                  <h5>Tools</h5>
+                  <p class="mb-0">Git, VS Code, Chrome DevTools</p>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card p-3">
-              <h5>Learning</h5>
-              <p class="mb-0">React, Node.js, APIs</p>
+            <div class="tilt-card">
+              <div class="tilt-inner">
+                <div class="card p-3">
+                  <h5>Learning</h5>
+                  <p class="mb-0">React, Node.js, APIs</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -83,31 +94,34 @@
       <section id="contact" class="mb-5">
         <h2>Contact</h2>
         <p>If you'd like to get in touch, email me at <a href="mailto:you@example.com">nasrsamuel@gmail.com</a> or use the form below.</p>
-        <div id="formAlert"></div>
-        <form id="contactForm" class="row g-3" action="https://formspree.io/f/mwpryokj" method="POST">
-          <input type="hidden" name="_subject" value="New message from Sam's portfolio">
+         <div class="tilt-card">
+           <div class="tilt-inner">
+             <form id="contactForm" class="row g-3" action="https://formspree.io/f/mwpryokj" method="POST">
           <div class="col-md-6">
-            <label for="contact-name" class="form-label">Name</label>
-            <input id="contact-name" name="name" type="text" class="form-control" placeholder="Your name" required>
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="Your name">
           </div>
           <div class="col-md-6">
-            <label for="contact-email" class="form-label">Email</label>
-            <input id="contact-email" name="email" type="email" class="form-control" placeholder="you@example.com" required>
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="you@example.com">
           </div>
           <div class="col-12">
-            <label for="contact-message" class="form-label">Message</label>
-            <textarea id="contact-message" name="message" class="form-control" rows="4" placeholder="Write your message..." required></textarea>
+            <label class="form-label">Message</label>
+            <textarea class="form-control" rows="4" placeholder="Write your message..."></textarea>
           </div>
           <div class="col-12">
-            <button id="contactSubmit" type="submit" class="btn btn-primary">Send</button>
+            <button type="submit" class="btn btn-primary">Send</button>
           </div>
+             </form>
+           </div>
+         </div>
         </form>
       </section>
     </main>
 
     <footer class="bg-dark text-light py-4">
       <div class="container text-center small">
-        <p class="mb-1">&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+        <p class="mb-1">&copy; <span id="year"></span> Sams Portfolio. All rights reserved :).</p>
         <div>
           <a href="#" class="text-light me-2">GitHub</a>
           <a href="#" class="text-light me-2">LinkedIn</a>
@@ -120,48 +134,27 @@
       // Set current year
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Formspree submit handler
+      // Simple tilt interaction for elements with .tilt-card
       (function(){
-        const form = document.getElementById('contactForm');
-        const alertEl = document.getElementById('formAlert');
-        if (!form) return;
-
-        form.addEventListener('submit', async function(e){
-          e.preventDefault();
-          const submitBtn = document.getElementById('contactSubmit');
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Sending...';
-
-          const data = new FormData(form);
-
-          try{
-            const res = await fetch(form.action, {
-              method: form.method,
-              body: data,
-              headers: { 'Accept': 'application/json' }
-            });
-
-            if (res.ok){
-              // Show a quick success message, then redirect to confirmation page
-              alertEl.innerHTML = '<div class="alert alert-success" role="alert">Thanks — your message was sent successfully. Redirecting…</div>';
-              form.reset();
-              setTimeout(function(){ window.location.href = 'success.html'; }, 700);
-            } else {
-              const json = await res.json().catch(()=>null);
-              const msg = (json && json.error) ? json.error : 'There was a problem sending your message. Please try again later.';
-              alertEl.innerHTML = `<div class="alert alert-danger" role="alert">${msg}</div>`;
-            }
-          }catch(err){
-            alertEl.innerHTML = '<div class="alert alert-danger" role="alert">Network error — please try again later.</div>';
-          } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send';
-          }
+        const cards = document.querySelectorAll('.tilt-card');
+        cards.forEach(card => {
+          const inner = card.querySelector('.tilt-inner');
+          if(!inner) return;
+          const handle = (e) => {
+            const rect = card.getBoundingClientRect();
+            const px = (e.clientX - rect.left) / rect.width; // 0..1
+            const py = (e.clientY - rect.top) / rect.height; // 0..1
+            const rotY = (px - 0.5) * 18; // rotate Y based on x
+            const rotX = (0.5 - py) * 12; // rotate X based on y
+            inner.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(6px)`;
+          };
+          card.addEventListener('mousemove', handle);
+          card.addEventListener('mouseleave', () => { inner.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0)'; });
         });
       })();
     </script>
-    <!-- Bootstrap JS bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
